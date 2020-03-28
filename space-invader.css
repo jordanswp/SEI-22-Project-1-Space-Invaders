@@ -1,0 +1,40 @@
+#background {
+    height: 708px;
+    width: 1080px;
+    background-image: url('assets/starfield.jpg');
+}
+
+#player {
+    background-image: url('assets/player.png');
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 600px;
+    left: 600px;
+}
+
+.alien {
+    background-image: url('assets/alien.png');
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+#bullets {
+    height: 708px;
+    width: 1080px;
+    position: absolute;
+}
+
+.bullet {
+    background-image : url('assets/playerbullet.png');
+    height: 15px;
+    width: 10px;
+    position: absolute;
+}
+
+#aliens{
+    height: 800px;
+    width: 1200px;
+    position: absolute;
+}
