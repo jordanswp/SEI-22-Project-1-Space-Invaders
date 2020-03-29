@@ -1,4 +1,5 @@
 console.log("start of js");
+console.log("test");
 
 //determine player location to move later
 var player = {
@@ -9,25 +10,25 @@ var player = {
 var bullets = [];
 
 var aliens = [
-    {top: 150, left: 500},
-    {top: 200, left: 400},
-    {top: 150, left: 400},
-    {top: 100, left: 400},
-    {top: 100, left: 500},
-    {top: 200, left: 500},
     {top: 50, left: 400},
     {top: 50, left: 500},
     {top: 50, left: 600},
     {top: 50, left: 700},
-    {top: 150, left: 600},
-    {top: 150, left: 700},
+    {top: 50, left: 800},
+    {top: 100, left: 400},
+    {top: 100, left: 500},
     {top: 100, left: 600},
     {top: 100, left: 700},
+    {top: 100, left: 800},
+    {top: 150, left: 400},
+    {top: 150, left: 500},
+    {top: 150, left: 600},
+    {top: 150, left: 700},
+    {top: 150, left: 800},
+    {top: 200, left: 400},
+    {top: 200, left: 500},
     {top: 200, left: 600},
     {top: 200, left: 700},
-    {top: 50, left: 800},
-    {top: 100, left: 800},
-    {top: 150, left: 800},
     {top: 200, left: 800},
     ];
 
@@ -78,7 +79,8 @@ function movePlayer(){
 function drawAliens() {
     document.getElementById('aliens').innerHTML = "";
     for( var alien = 0; alien < aliens.length; alien++){
-        document.getElementById('bullets').innerHTML += `<div class='alien' style='left:${aliens[alien].left}px; top:${aliens[alien].top}px;'></div>`;
+        document.getElementById('aliens').innerHTML +=
+        `<div class='alien' style='left:${aliens[alien].left}px; top:${aliens[alien].top}px;'></div>`;
     }
 };
 
@@ -108,15 +110,20 @@ function collisionDetection() {
         for( var bullet = 0; bullet < bullets.length; bullet++){
             if (
                 (bullets[bullet].top <= aliens[alien].top + 50) &&
-                (bullets[bullet].top > aliens[alien].top) &&
-                (bullets[bullet].left >=aliens[alien].left) &&
-                (bullets[bullet].left <= bullets[bullet].left )
+                (bullets[bullet].top >= aliens[alien].top) &&
+                (bullets[bullet].left >= aliens[alien].left) &&
+                (bullets[bullet].left <= aliens[alien].left + 50)
                 ){
                 aliens.splice(alien, 1);
+                //console.log(aliens);
                 bullets.splice(bullet, 1);
             }
         }
     }
+}
+
+if (aliens.length === 0) {
+    console.log("you win");
 }
 
 function gameLoop(){
