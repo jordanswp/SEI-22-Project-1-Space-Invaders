@@ -50,7 +50,7 @@ var aliens = [
     {top: 200, left: Math.random()*1000},
     {top: 200, left: Math.random()*1000},
     {top: 200, left: Math.random()*1000},
-    // {top: 200, left: Math.random()*1000},
+    {top: 200, left: Math.random()*1000},
     {top: 200, left: Math.random()*1000},
     ];
 
@@ -161,7 +161,7 @@ function winMsg() {
 }
 
 function lose() {
-    if (aliens.length > 0 && aliens[0].top > 570) {
+    if (aliens.length > 0 && (aliens[0].top > 570 || aliens[1].top > 570 || aliens[2].top > 570 || aliens[3].top > 570 || aliens[4].top > 570 || aliens[5].top > 570 || aliens[6].top > 570 || aliens[7].top > 570 || aliens[8].top > 570 || aliens[9].top > 570 || aliens[10].top > 570 || aliens[11].top > 570 || aliens[12].top > 570 || aliens[13].top > 570 || aliens[14].top > 570 || aliens[15].top > 570 || aliens[16].top > 570 || aliens[17].top > 570 || aliens[18].top > 570 || aliens[19].top > 570)) {
         document.getElementById('win-msg').textContent = "You Lose!";
     }
 }
