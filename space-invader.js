@@ -7,7 +7,6 @@ var player = {
     left: 600
 };
 
-Math.random()*1000
 var bullets = [];
 var timeLeft = 5;
 
